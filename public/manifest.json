@@ -1,0 +1,36 @@
+{
+  "name": "Magzaine — 前端报刊",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "前端报刊，使用Vite + Vue3 + TS编写的chrome插件",
+  "icons": {
+    "16": "icon/magzaine16.png",
+    "48": "icon/magzaine48.png",
+    "128": "icon/magzaine128.png"
+  },
+  "page_action": {
+    "default_icon": "icon/magzaine16.png",
+    "default_title": "chrome插件-前端报刊",
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.schbrain.com/*"
+      ],
+      "css": [
+        "assets/content.css"
+      ],
+      "js": [
+        "assets/content.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "contextMenus"
+  ],
+  "background": {
+    "scripts": ["assets/background.js"]
+  },
+  "web_accessible_resources": ["assets/inject.js"]
+}
